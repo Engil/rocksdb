@@ -694,6 +694,16 @@ enum {
 };
 extern ROCKSDB_LIBRARY_API void rocksdb_block_based_options_set_index_type(
     rocksdb_block_based_table_options_t*, int);  // uses one of the above enums
+enum {
+  rocksdb_block_based_table_data_block_index_type_binary_search = 0,
+  rocksdb_block_based_table_data_block_index_type_binary_and_hash = 1,
+};
+extern ROCKSDB_LIBRARY_API void
+rocksdb_block_based_options_set_data_block_index_type(
+    rocksdb_block_based_table_options_t*, int);
+extern ROCKSDB_LIBRARY_API void
+rocksdb_block_based_options_set_data_block_hash_table_util_ratio(
+    rocksdb_block_based_table_options_t*, double);
 extern ROCKSDB_LIBRARY_API void
 rocksdb_block_based_options_set_hash_index_allow_collision(
     rocksdb_block_based_table_options_t*, unsigned char);
